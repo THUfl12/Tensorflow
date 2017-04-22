@@ -68,12 +68,14 @@ train = optimizer.minimize(loss)
 
 init = tf.global_variables_initializer()
 
+# if you want to save part of variable, just add to collection
 # tf.add_to_collection('W', W)
 # tf.add_to_collection('b', b)
 # tf.add_to_collection('loss', loss)
 # tf.add_to_collection('optimizer', optimizer)
 # tf.add_to_collection('train', train)
 
+# before session start, define the saver
 saver = tf.train.Saver()
 
 sess = tf.Session()
@@ -96,7 +98,8 @@ print(error_rate)
 np.savetxt('./my/train_array.txt', train_data_array, fmt = '%d')
 np.savetxt('./my/train_label.txt', train_label, fmt = '%d')
 #
-
+# save all the variables of the session
+# path should be '.my-model', don't forget the '.'. In this example, I create a folder named 'my' to store the model and file
 saver.save(sess, './my/my-model')
 
 
