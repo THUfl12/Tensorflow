@@ -1,3 +1,4 @@
+# how to use a common layer and Lambda layer, and then initialize the state of GRU unit
 from keras.layers import Dense, Input, Embedding, Dropout, GRU
 from keras.models import Model
 from keras.layers.core import Lambda
