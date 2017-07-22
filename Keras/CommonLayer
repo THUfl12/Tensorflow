@@ -46,7 +46,12 @@ initial_state = Dense(units)(mean_temp)
 # feature_output = TimeDistributed(Dense(units))(temp_out)
 # initial_state = Lambda(lambda x: K.mean(x, axis=1))(feature_output)
 
-lstm_output = GRU(units=units, return_sequences=False)(x, initial_state=initial_state)
+# for GRU unit, there is only one state
+# lstm_output = GRU(units=units, return_sequences=False)(x, initial_state=initial_state)
+
+# for LSTM unit, there are two states, one is hidden state and the other is cell state
+lstm_output = LSTM(units=units, return_sequences=False)(x, initial_state=[initial_state, initial_state])
+
 lstm_output = Dropout(0.1)(lstm_output)
 
 output = Dense(feature_size, activation='softmax', name='scan_output')(lstm_output)
