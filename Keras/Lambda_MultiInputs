@@ -9,12 +9,16 @@ config = tf.ConfigProto()
 config.gpu_options.per_process_gpu_memory_fraction = 0.3
 set_session(tf.Session(config=config))
 
-def concat_test(input):
+# since there is no parameter needed to be estimated from data, so just put all the inputs into a list
+# and get every elment from list.
+# Notice that the elment should be tensor
+
+def concat_test(input,axis):
     a = input[0]
     b = input[1]
-    return K.concatenate([a, b], axis=1)
+    return K.concatenate([a, b], axis=axis)
 
 var_1 = Input(shape=(1,))
 var_2 = Input(shape=(2,))
 
-var = Lambda(concat_test, name='concat_test')([var_1, var_2])
+var = Lambda(concat_test, name='concat_test', arguments={'axis': 1})([var_1, var_2])
