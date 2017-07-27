@@ -22,3 +22,8 @@ var_1 = Input(shape=(1,))
 var_2 = Input(shape=(2,))
 
 var = Lambda(concat_test, name='concat_test', arguments={'axis': 1})([var_1, var_2])
+
+model = Model(inputs=[var_1, var_2], outputs=[var])
+model.compile(optimizer='adam', loss='mse')
+
+print(model.summary())
