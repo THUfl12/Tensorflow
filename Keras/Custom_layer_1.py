@@ -3,6 +3,11 @@ from keras.engine.topology import Layer
 from keras import backend as K
 from keras.models import Model
 
+from keras.backend.tensorflow_backend import set_session
+config = tf.ConfigProto()
+config.gpu_options.per_process_gpu_memory_fraction = 0.3
+set_session(tf.Session(config=config))
+
 # define a self layer which doesn't include trainable parameters
 class MyLayer(Layer):
 
