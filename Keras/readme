@@ -4,6 +4,9 @@ tensorflow-gpu on GTX-1070
 os : win-10
 
 CommonLayer.py: how to define and use a common layer. In the code, Embedding layer is used.
+
 Embedding_Conv1d.py: use Con1d to map the feature from embedding layer
+
 Lambda_MultiInputs.py: how to use multiple inputs and extra parameter in Lambda layer
+
 Custom_layer_1.py: define a self layer which doesn't include trainable parameters
