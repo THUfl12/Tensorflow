@@ -18,8 +18,9 @@ class MyLayer(Layer):
         super(MyLayer, self).__init__(**kwargs)
 
     # first use build function to define parameters, Creates the layer weights.
+    # input_shape will automatic collect input shapes to build layer
     def build(self, input_shape):
-        print('build')
+        print(input_shape)
         super(MyLayer, self).build(input_shape)
 
     # This is where the layer's logic lives. In this example, I just concat two tensors.
