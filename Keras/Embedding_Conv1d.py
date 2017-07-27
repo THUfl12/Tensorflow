@@ -18,7 +18,7 @@ feature_p_embedding = embedding_layer(feature_p)
 
 # output shape will be (None, 98, 1)
 # [which is (None, newsteps, nb_filters)], since padding style is valid, so the newsteps=100-3+1
-# the con_1 parameters is 3*10+1(10, is the embedding size, 1 is bias)
+# the con_1 parameters is 1*(3*10+1) (first 1 is nb_filters, 3 is kernel_size, 10 is the embedding size, 1 is bias)
 con_1 = Conv1D(filters=1, kernel_size=3, padding='valid', activation='relu')(feature_p_embedding)
 # output shape will be (None, 49, 1)
 con_1 = MaxPooling1D(pool_size=2)(con_1)
