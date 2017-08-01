@@ -4,7 +4,7 @@ This model is a complicated one, you can just replace it for a easier one.
 
 ![ps.py](https://github.com/THUfl12/Tensorflow/blob/master/Keras/Simple_Distributed_Test/ps.py): start parameter server. <br>
 ![worker.py](https://github.com/THUfl12/Tensorflow/blob/master/Keras/Simple_Distributed_Test/worker.py): start worker server. <br>
-Be sure the id address is right!
+Be sure the ip address is right!
 
 Reference:
 ------------------------------------------------
