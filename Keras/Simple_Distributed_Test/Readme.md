@@ -8,5 +8,5 @@ Be sure the id address is right!
 
 Reference:
 ------------------------------------------------
-![Tensorflow: Distributed TensorFlow](https://www.tensorflow.org/deploy/distributed) <br>
-![Distributed Tensorflow Example ](http://ischlag.github.io/2016/06/12/async-distributed-tensorflow/) <br>
+![Tensorflow.org: Distributed TensorFlow](https://www.tensorflow.org/deploy/distributed) <br>
+![Imanol Schlag: Distributed Tensorflow Example ](http://ischlag.github.io/2016/06/12/async-distributed-tensorflow/) <br>
