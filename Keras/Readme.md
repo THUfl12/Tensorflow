@@ -5,7 +5,7 @@ keras: 2.0.6 <br>
 tensorflow-gpu on GTX-1070 <br>
 os : win-10 <br>
 
-File：
+File and Folder：
 ---------------------------------------------------
 ![CommonLayer.py](https://github.com/THUfl12/Tensorflow/blob/master/Keras/CommonLayer.py): 
 how to define and use a common layer. In the code, Embedding layer is used. <br>
