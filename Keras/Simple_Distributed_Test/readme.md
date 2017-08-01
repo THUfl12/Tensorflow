@@ -3,5 +3,5 @@ There is one parameter server(ps), and one worker server.
 This model is a complicated one, you can just replace it for a easier one.
 
 Reference:
-
-![Distributed TensorFlow] (https://www.tensorflow.org/deploy/distributed)
+![Distributed TensorFlow](https://www.tensorflow.org/deploy/distributed)
+![ABC](http://www.baidu.com/img/bdlogo.gif) 
