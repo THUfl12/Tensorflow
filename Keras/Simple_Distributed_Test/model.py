@@ -26,6 +26,7 @@ def expand_feature(input):
     exp_weight = K.expand_dims(cart_flag, 2)
     return K.concatenate([emb_state, exp_weight], 2)
 
+# define flags
 tf.app.flags.DEFINE_string("ps_hosts", "10.1.8.27:2223",
                            "comma-separated list of hostname:port pairs")
 tf.app.flags.DEFINE_string("worker_hosts", "10.1.8.27:2222",
@@ -52,27 +53,26 @@ def main(_):
     x_N = np.array([[2, 3], [4, 3]])
     y = np.array([[1, 0, 0, 0], [0, 1, 0, 0]])
 
-    print('1')
     ps_hosts = FLAGS.ps_hosts.split(",")
     worker_hosts = FLAGS.worker_hosts.split(",")
 
-    print('2')
     cluster = tf.train.ClusterSpec({"ps": ps_hosts, "worker": worker_hosts})
     server = tf.train.Server(cluster,
                              job_name=FLAGS.job_name,
                              task_index=FLAGS.task_index)
 
     if FLAGS.job_name == "ps":
-        print('start join')
         server.join()
     elif FLAGS.job_name == "worker":
+        # Between-graph replication
         with tf.device(tf.train.replica_device_setter(
                 worker_device="/job:worker/task:%d" % FLAGS.task_index,
                 cluster=cluster)):
 
             K.set_learning_phase(1)
             K.manual_variable_initialization(True)
-
+            
+            # bulid model use Keras
             # LSTM pre process for one feature
             embedding_layer = Embedding(output_dim=embedding_size,
                                         input_dim=feature_size + 1,
@@ -115,11 +115,13 @@ def main(_):
 
             model = Model(inputs=[feature_p, feature_input, feature_N, feature_weight],
                           outputs=[output])
-
+            # model built
+            # define train label and loss function, since it is a dirstributed system, we use global_step to record the process
             targets = tf.placeholder(shape=(None, feature_size), dtype=tf.float32)
             loss = tf.reduce_mean(keras.losses.categorical_crossentropy(targets, output))
             global_step = tf.Variable(0, name='global_step', trainable=False)
-
+            
+            # define optimizer
             optimizer = tf.train.RMSPropOptimizer(1e-3, decay=0, epsilon=1e-6)
 
             with tf.control_dependencies(model.updates):
