@@ -9,4 +9,3 @@ Be sure the id address is right!
 Reference:
 ------------------------------------------------
 ![Distributed TensorFlow](https://www.tensorflow.org/deploy/distributed) <br>
-![fchollet_keras](https://gist.github.com/fchollet/2c9b029f505d94e6b8cd7f8a5e244a4e) 
