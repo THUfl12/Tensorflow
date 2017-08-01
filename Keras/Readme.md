@@ -1,9 +1,9 @@
 Requirement：
 ---------------------------------------------------
-python 3.5.2 <br>
+python: 3.5.2 <br>
 keras: 2.0.6 <br>
-tensorflow-gpu on GTX-1070 <br>
-os : win-10 <br>
+tensorflow-gpu: GTX-1070 <br>
+os: win-10 <br>
 
 File and Folder：
 ---------------------------------------------------
