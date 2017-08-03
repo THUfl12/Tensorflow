@@ -10,3 +10,4 @@ Reference:
 ------------------------------------------------
 ![Tensorflow.org: Distributed TensorFlow](https://www.tensorflow.org/deploy/distributed) <br>
 ![Imanol Schlag: Distributed Tensorflow Example ](http://ischlag.github.io/2016/06/12/async-distributed-tensorflow/) <br>
+![fchollet keras_distributed](https://gist.github.com/fchollet/2c9b029f505d94e6b8cd7f8a5e244a4e)
