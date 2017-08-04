@@ -18,4 +18,4 @@ define a self layer which doesn't include trainable parameters <br>
 * ![Self_LossFunc.py](https://github.com/THUfl12/Tensorflow/blob/master/Keras/Self_LossFunc.py):
 define a self loss function on the basis of CommonLayer.py
 * ![Simple_Distributed_Test](https://github.com/THUfl12/Tensorflow/tree/master/Keras/Simple_Distributed_Test):
-Use Keras and Tensorflow to develop a simple distributed example. <br>
+use Keras and Tensorflow to develop a simple distributed example. <br>
