@@ -1,4 +1,4 @@
-Requirement：
+Environment：
 ---------------------------------------------------
 * python: 3.5.2 <br>
 * keras: 2.0.6 <br>
